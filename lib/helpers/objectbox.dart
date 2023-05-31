@@ -13,5 +13,6 @@ class ObjectBox {
     if(store.isClosed()) {
       return ObjectBox._creat(store);
     }
+    return null;
   }
 }

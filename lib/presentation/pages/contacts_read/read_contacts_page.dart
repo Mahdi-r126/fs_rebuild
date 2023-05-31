@@ -79,8 +79,8 @@ class ReadContactsPage extends StatelessWidget {
                         ),
                       ),
                     )
-                    : readingContactsState is ReadContactsLoading ? Column(
-                      children: const [
+                    : readingContactsState is ReadContactsLoading ? const Column(
+                      children: [
                         SizedBox(child: Padding(
                           padding: EdgeInsets.all(8.0),
                           child:  ReadTimer()

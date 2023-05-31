@@ -44,7 +44,7 @@ class _FolderInputState extends State<FolderInput> {
             _focusNode.requestFocus();
             folderName.setFolderName=value;
           },
-          autofillHints: ["Enter Folder Name"],
+          autofillHints: const ["Enter Folder Name"],
           decoration: const InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),

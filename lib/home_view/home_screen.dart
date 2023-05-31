@@ -1,29 +1,19 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:freesms/helpers/constants.dart';
 import 'package:freesms/helpers/folderHelper.dart';
 import 'package:freesms/helpers/sharedprefs.dart';
 import 'package:freesms/home_view/widget/versionConflictModal.dart';
-import 'package:freesms/pages/rewardScreen.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 import '../Costanat.dart';
 import '../apis/apis.dart';
-import '../helpers/sharedprefs.dart';
-import '../helpers/smsHelper.dart';
 import '../models/folders.dart';
-import '../pages/version_conflict.dart';
 import '../presentation/pages/home/contacts_view/read_contacts_page.dart';
-import '../user/providers/userProvider.dart';
-import '../widgets/contact_list.dart';
 import 'chats_veiw/chats_screen.dart';
-import 'contacts_view/contacts_screen.dart';
 import 'wallet_view/wallet_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'widget/drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -35,7 +25,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver  {
 
   bool rewardOn=SharedPrefs.getReward();
-  List<Folders>_folders=[];
+  final List<Folders>_folders=[];
   @override
   void initState() {
     super.initState();
@@ -87,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver  {
       int seenVersion=(seenVersionSpilt.isNotEmpty)?int.parse(seenVersionSpilt[0]) * 1000 +
           int.parse(seenVersionSpilt[1]) * 100 +
           int.parse(seenVersionSpilt[2]):-1;
-      print("${a}___${b}");
+      print("${a}___$b");
 
       if (b < a) {
         if (seenVersion != -1 && a != seenVersion) {
@@ -144,6 +134,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver  {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
     List<Widget> _children() {

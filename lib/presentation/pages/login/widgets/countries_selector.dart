@@ -10,7 +10,7 @@ class CountriesSelector extends StatefulWidget {
 }
 
 class _CountriesSelectorState extends State<CountriesSelector> {
-  String? _selectedCountryPhoneCode = '98';
+  final String? _selectedCountryPhoneCode = '98';
   String? _selectedCountryName = 'Iran';
 
   final List<Country> _countries = [

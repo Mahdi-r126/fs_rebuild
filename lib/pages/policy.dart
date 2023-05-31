@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../helpers/constants.dart';
 
@@ -13,13 +12,13 @@ class Policy extends StatelessWidget {
         appBar: AppBar(
           // backgroundColor: Color(0xFF0C0D0F),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new_rounded,color:Color(0xFF0C0D0F),
+            icon: const Icon(Icons.arrow_back_ios_new_rounded,color:Color(0xFF0C0D0F),
               size: 20.0,),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
-          title: Text( "Policy",
+          title: const Text( "Policy",
             style: TextStyle(color: Color(0xFF0C0D0F),
                 fontSize: 20,fontWeight: FontWeight.w700),
           ),
@@ -36,7 +35,7 @@ class Policy extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Text(Constants.policy,
       textAlign: TextAlign.justify
-      ,style: TextStyle(
+      ,style: const TextStyle(
       color: Color(0xFF0C0D0F),fontSize: 16,
       fontWeight: FontWeight.w400
       ),),

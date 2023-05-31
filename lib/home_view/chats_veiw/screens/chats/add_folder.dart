@@ -27,9 +27,9 @@ class _AddFolderScreenState extends State<AddFolderScreen> {
             const SizedBox(height: 30,),
             const FolderRichText(),
             const SizedBox(height: 15,),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 FolderInput(),
                 SizedBox(width: 10,),
                 FolderButton(),
@@ -43,8 +43,8 @@ class _AddFolderScreenState extends State<AddFolderScreen> {
                 shrinkWrap: true,
                   physics: const AlwaysScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return (selectedContact.getContact.length!=0)?Container(
-                      padding: EdgeInsets.all(15),
+                    return (selectedContact.getContact.isNotEmpty)?Container(
+                      padding: const EdgeInsets.all(15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -53,7 +53,7 @@ class _AddFolderScreenState extends State<AddFolderScreen> {
                             backgroundImage: AssetImage("assets/images/avatar.png"),
                           ),
                           const SizedBox(width: 10,),
-                          Text(selectedContact.getContact[index].displayName!,style: TextStyle(color: Colors.black,fontSize: 15),)
+                          Text(selectedContact.getContact[index].displayName!,style: const TextStyle(color: Colors.black,fontSize: 15),)
                         ],
                       ),
                     ):Container();

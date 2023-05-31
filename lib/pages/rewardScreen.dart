@@ -13,7 +13,7 @@ class RewardScreen extends StatelessWidget {
       appBar: AppBar(
         // backgroundColor: Color(0xFF0C0D0F),
         title: Text(AppLocalizations.of(context).reward,
-          style: TextStyle(color: Color(0xFF0C0D0F),
+          style: const TextStyle(color: Color(0xFF0C0D0F),
               fontSize: 20,fontWeight: FontWeight.w700),
         ),
 

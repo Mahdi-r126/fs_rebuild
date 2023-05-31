@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 
 import '../../domain/entities/contact.dart';
-import '../../domain/entities/contacts.dart';
 
 class ContactModel extends Contact{
 

@@ -16,8 +16,8 @@ class Section extends StatelessWidget {
             height: 130,
             decoration: const BoxDecoration(color: Colors.lightBlueAccent, borderRadius: BorderRadius.all(Radius.circular(10))),
             width: MediaQuery.of(context).size.height * 0.9, // Set the width of the container inside the card
-            child: Padding(
-              padding: const EdgeInsets.only(left: 14.0, bottom: 14.0, right: 18),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 14.0, bottom: 14.0, right: 18),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,12 +25,12 @@ class Section extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
+                    children: [
                       Text('Free Services', style: TextStyle(fontWeight: FontWeight.bold),),
                       Text('Include 9 themes', style: TextStyle(fontSize: 14))
                     ],
                   ),
-                  const Icon(Icons.arrow_forward_ios, size: 20)
+                  Icon(Icons.arrow_forward_ios, size: 20)
                 ],
               ),
             ),
@@ -40,8 +40,8 @@ class Section extends StatelessWidget {
             height: 130,
             decoration: const BoxDecoration(color: Colors.lightBlueAccent, borderRadius: BorderRadius.all(Radius.circular(10))),
             width: MediaQuery.of(context).size.height * 0.9, // Set the width of the container inside the card
-            child: Padding(
-              padding: const EdgeInsets.only(left: 14.0, bottom: 14.0, right: 18),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 14.0, bottom: 14.0, right: 18),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,12 +49,12 @@ class Section extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
+                    children: [
                       Text('Private Sector', style: TextStyle(fontWeight: FontWeight.bold),),
                       Text('Include 9 themes', style: TextStyle(fontSize: 14))
                     ],
                   ),
-                  const Icon(Icons.arrow_forward_ios, size: 20)
+                  Icon(Icons.arrow_forward_ios, size: 20)
                 ],
               ),
             ),
@@ -64,8 +64,8 @@ class Section extends StatelessWidget {
             height: 130,
             decoration: const BoxDecoration(color: Colors.lightBlueAccent, borderRadius: BorderRadius.all(Radius.circular(10))),
             width: MediaQuery.of(context).size.height * 0.9, // Set the width of the container inside the card
-            child: Padding(
-              padding: const EdgeInsets.only(left: 14.0, bottom: 14.0, right: 18),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 14.0, bottom: 14.0, right: 18),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,12 +73,12 @@ class Section extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
+                    children: [
                       Text('Public Services', style: TextStyle(fontWeight: FontWeight.bold),),
                       Text('Include 9 themes', style: TextStyle(fontSize: 14))
                     ],
                   ),
-                  const Icon(Icons.arrow_forward_ios, size: 20)
+                  Icon(Icons.arrow_forward_ios, size: 20)
                 ],
               ),
             ),

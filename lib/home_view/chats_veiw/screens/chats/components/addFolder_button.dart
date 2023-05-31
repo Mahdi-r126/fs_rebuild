@@ -23,7 +23,7 @@ class AddFolderButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            return ModalContact();
+            return const ModalContact();
           },));
         },
         child: const Text("Select Contact", style: TextStyle(fontSize: 16,

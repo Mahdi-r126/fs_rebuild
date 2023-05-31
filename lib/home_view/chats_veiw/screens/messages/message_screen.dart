@@ -1,29 +1,14 @@
-import 'dart:convert';
-import 'dart:typed_data';
 
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sms/flutter_sms.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:freesms/home_view/home_screen.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:linkfy_text/linkfy_text.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../../../../apis/apis.dart';
-import '../../../../helpers/constants.dart';
-import '../../../../helpers/sharedprefs.dart';
-import '../../../../models/ad.dart';
-import '../../../../pages/ads_theme.dart';
 import '../../chat_constants.dart';
-import 'components/modal_compose_message.dart';
 
 class MessagesScreen extends StatefulWidget {
   late String phoneNumber;
 
-  MessagesScreen({required this.phoneNumber});
+  MessagesScreen({Key? key, required this.phoneNumber}) : super(key: key);
 
   @override
   State<MessagesScreen> createState() => _MessagesScreenState();
@@ -261,7 +246,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
           )
         ],
       ),
-      actions: [],
+      actions: const [],
     );
   }
 }

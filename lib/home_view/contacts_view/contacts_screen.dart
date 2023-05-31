@@ -17,7 +17,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       appBar: AppBar(
         title: Text("Contact", style: TextStyle(color: Costanat.appBarTextColor,
             fontSize: 20,fontWeight: FontWeight.w700),
@@ -43,7 +43,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                    Container(
+                    SizedBox(
                         width: double.maxFinite,
                         // color: Colors.yellowAccent,
                         height: 72,
@@ -52,15 +52,15 @@ class _ContactsScreenState extends State<ContactsScreen> {
                         Image.asset("assets/images/out-of-stock 1.png",
                           width: 72,height: 72,)
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
                       child: Text("No Results Found :(",style: TextStyle(
                           color: Color(0xFF0C0D0F),fontSize: 20,
                           fontWeight: FontWeight.w700
                       ),),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
                       child:
                       Text("we couldn't find what you searched for. \n Try searching again."
                         ,style: TextStyle(
@@ -121,10 +121,10 @@ class _ContactsScreenState extends State<ContactsScreen> {
               // return widget informing of error
               return Center(
                 child: Container(
-                  child: Column(
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
+                    children: [
                       Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Text("Error:(",style: TextStyle(

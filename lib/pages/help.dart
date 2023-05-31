@@ -22,14 +22,14 @@ class Help extends StatelessWidget {
         appBar: AppBar(
           // backgroundColor: Color(0xFF0C0D0F),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new_rounded,color: Color(0xFF0C0D0F),
+            icon: const Icon(Icons.arrow_back_ios,color: Color(0xFF0C0D0F),
               size: 20.0,),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
           title: Text( AppLocalizations.of(context).help,
-            style: TextStyle(color: Color(0xFF0C0D0F),
+            style: const TextStyle(color: Color(0xFF0C0D0F),
                 fontSize: 20,fontWeight: FontWeight.w700),
           ),
 
@@ -41,7 +41,7 @@ class Help extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
 
-          Container(
+          SizedBox(
               width: double.maxFinite,
               // color: Colors.yellowAccent,
               height: 150,
@@ -55,7 +55,7 @@ class Help extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Text(AppLocalizations.of(context).helpText,
                   textAlign: TextAlign.justify
-                ,style: TextStyle(
+                ,style: const TextStyle(
                   color: Color(0xFF0C0D0F),fontSize: 16,
                   fontWeight: FontWeight.w400
               ),),

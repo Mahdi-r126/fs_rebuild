@@ -1,6 +1,4 @@
-import 'dart:convert';
 
-import 'package:freesms/models/ads_list.dart';
 
 import 'ad.dart';
 

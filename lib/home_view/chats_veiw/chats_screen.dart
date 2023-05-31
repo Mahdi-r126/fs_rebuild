@@ -1,27 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:freesms/helpers/folderHelper.dart';
-import 'package:freesms/helpers/sharedprefs.dart';
-import 'package:freesms/home_view/chats_veiw/screens/chats/add_folder.dart';
 import 'package:freesms/home_view/widget/drawer.dart';
 import 'package:provider/provider.dart';
 import '../../Costanat.dart';
-import '../../apis/apis.dart';
-import '../../helpers/contactHelper.dart';
 import '../../helpers/smsHelper.dart';
 import '../../models/folders.dart';
-import '../../pages/about_us.dart';
-import '../../pages/admin_panel.dart';
-import '../../pages/help.dart';
-import '../../pages/setting.dart';
-import '../../pages/wallet_page.dart';
 import '../../presentation/pages/home/contacts_view/read_contacts_page.dart';
-import '../../presentation/pages/sponsor_ads/sponsors_ads_page.dart';
 import '../../user/providers/userProvider.dart';
-import '../../widgets/contact_list.dart';
-import '../../widgets/contact_list_dialog.dart';
-import '../../widgets/share_to_friends.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:freesms/helpers/constants.dart';
 import 'screens/chats/folder_screen.dart';
 
 class ChatsScreen extends StatefulWidget {
@@ -96,12 +81,12 @@ class _ChatsScreenState extends State<ChatsScreen>
     double size = MediaQuery.of(context).size.width;
     final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Scaffold(
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       key: _key,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: () {
             _key.currentState!.openDrawer();
           },
@@ -145,7 +130,7 @@ class _ChatsScreenState extends State<ChatsScreen>
           Dialog errorDialog = Dialog(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0)), //this right here
-            child: Container(
+            child: SizedBox(
               height: 450,
               width: double.infinity,
               child: ReadContactsPage(removeDrawer: true),

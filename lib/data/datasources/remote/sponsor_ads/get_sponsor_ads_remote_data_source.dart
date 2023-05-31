@@ -1,9 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:freesms/apis/apis.dart';
-import 'package:freesms/models/ads_list.dart';
 import 'package:freesms/presentation/shared/entities/failure.dart';
 
-import '../../../../helpers/constants.dart';
 import '../../../models/ads_list_model.dart';
 
 class GetSponsorAdsRemoteDataSourceImpl implements GetSponsorAdsRemoteDataSource {

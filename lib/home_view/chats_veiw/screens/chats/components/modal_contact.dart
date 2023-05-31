@@ -13,7 +13,7 @@ class ModalContact extends StatefulWidget {
 
 class _ModalContactState extends State<ModalContact> {
   List<Contact> _contacts=[];
-  List<Contact>  _selectedContacts=[];
+  final List<Contact>  _selectedContacts=[];
   @override
   void initState() {
     // TODO: implement initState
@@ -30,7 +30,7 @@ class _ModalContactState extends State<ModalContact> {
         centerTitle: true,
       ),
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -44,7 +44,7 @@ class _ModalContactState extends State<ModalContact> {
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(child: Text(_contacts[index].displayName!,style: TextStyle(color: Colors.black,fontSize: 14),)),
+                        Expanded(child: Text(_contacts[index].displayName!,style: const TextStyle(color: Colors.black,fontSize: 14),)),
                         Checkbox(
                             value: _selectedContacts.contains(_contacts[index]) ? true : false,
                             onChanged: (value) {

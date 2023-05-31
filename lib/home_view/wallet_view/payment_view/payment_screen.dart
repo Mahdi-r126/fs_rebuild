@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -26,10 +28,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
     ToastContext().init(context);
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: const Color(0xFF0039C8),
           leading: IconButton(
             icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
+              Icons.arrow_back_ios,
               color: Colors.white,
               size: 20.0,
             ),
@@ -141,6 +144,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                       child: TextFormField(
                         textAlign: TextAlign.center,
+                        textDirection: TextDirection.ltr,
                         controller: _creditCardController,
                         keyboardType: TextInputType.number,
                         inputFormatters: [
@@ -149,7 +153,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           CardNumberInputFormatter(),
                         ],
                         decoration: const InputDecoration(
-                          hintText: "Card number",
                           border: InputBorder.none,
                         ),
                         style: const TextStyle(
@@ -170,8 +173,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             fontSize: 13,
                             fontWeight: FontWeight.w700,
                             color: Colors.white),
-                        children: <InlineSpan>[
-                          const TextSpan(
+                        children: const <InlineSpan>[
+                          TextSpan(
                             text: ' * ',
                             style: TextStyle(
                                 fontSize: 13,
@@ -190,6 +193,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         color: Colors.white,
                       ),
                       child: TextField(
+                        textDirection: TextDirection.ltr,
                         textAlign: TextAlign.center,
                         style:
                             const TextStyle(fontSize: 17, color: Colors.black),
@@ -214,20 +218,19 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           if (!(isValidCardNumber(
                               _creditCardController.text))) {
                             showDialog(context: context,
-                              builder: (context) => PaymenetAlert(message: "Card number is invalid",),);
-                          } else if (int.parse(_amountController.text) <
+                              builder: (context) =>PaymenetAlert(message: AppLocalizations.of(context).cashout_invalid_card,),);
+                          } else if (_amountController.text.isEmpty||int.parse(_amountController.text) <
                               amountLimit) {
                             showDialog(context: context,
-                              builder: (context) => PaymenetAlert(message: 'payment amount must be more than $amountLimit',),);
+                              builder: (context) =>PaymenetAlert(message: AppLocalizations.of(context).cashout_limit,),);
                           } else if (int.parse(_amountController.text) >
                               widget.wallet) {
                             showDialog(context: context,
-                              builder: (context) => PaymenetAlert(message: 'payment amount is more than your wallet',),);
+                              builder: (context) =>PaymenetAlert(message: AppLocalizations.of(context).cashout_wrong,),);
                           } else {
                             setState(() {
                               _loading = true;
                             });
-                            print("|||+true");
                             Apis api = Apis();
                             String amount = _amountController.text;
                             String cardNumber =
@@ -239,11 +242,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             });
                             if (response == true) {
                               await showDialog(context: context,
-                                  builder: (context) => PaymenetAlert(message: "cash out successfully reported",));
+                                  builder: (context) => PaymenetAlert(message: AppLocalizations.of(context).cashout_success_1+
+                                  "\n"+AppLocalizations.of(context).cashout_success_2+" ${generateRandomNumber()}",));
                               Navigator.pop(context);
                             } else {
                               showDialog(context: context,
-                                builder: (context) => PaymenetAlert(message: "cash out report failed",),);
+                                builder: (context) => PaymenetAlert(message: AppLocalizations.of(context).cashout_failed,),);
                             }
                           }
                         },
@@ -279,6 +283,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
         ));
+  }
+
+  int generateRandomNumber(){
+    Random random = Random();
+  int min = 10000000;
+  int max = 99999999;
+
+  int randomNumber;
+  randomNumber = min + random.nextInt(max - min);
+  print(randomNumber);
+  return randomNumber;
   }
 
   bool isValidCardNumber(String cardNumber) {

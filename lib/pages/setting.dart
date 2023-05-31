@@ -3,8 +3,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:freesms/helpers/sharedprefs.dart';
 import 'package:freesms/main.dart';
 import 'package:freesms/metrix/metrix.dart';
-import 'package:freesms/user/providers/userProvider.dart';
-import 'package:provider/provider.dart';
 
 class Setting extends StatefulWidget {
   const Setting({Key? key}) : super(key: key);
@@ -22,7 +20,7 @@ class _SettingState extends State<Setting> {
     "en_US": ["English", "assets/images/england_flag.png"]
   };
 
-  Object? _languageSelectionValue = Object();
+  final Object? _languageSelectionValue = Object();
 
   int english = 0;
   int persian = 1;
@@ -44,7 +42,7 @@ class _SettingState extends State<Setting> {
           ),
           title: Text(
             AppLocalizations.of(context).setting,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Color(0xFF0C0D0F),
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
@@ -152,7 +150,7 @@ class _SettingState extends State<Setting> {
   changeLocal(Locale newLocale) {
 final phoneNumber=SharedPrefs.getPhoneNumber();
     FreeSmsMetrix.settingChangeLanguage(
-      phoneNumber: '$phoneNumber',
+      phoneNumber: phoneNumber,
       locale: '${newLocale.languageCode}_${newLocale.countryCode}',
     );
     MyApp.setLocale(context, newLocale);

@@ -6,8 +6,6 @@ import 'package:freesms/metrix/metrix.dart';
 import 'package:freesms/presentation/pages/login/cubit/referral_cubit.dart';
 import 'package:freesms/presentation/pages/splash/splash_page.dart';
 import 'package:freesms/presentation/shared/utils/injection_container.dart';
-import 'package:freesms/user/providers/userProvider.dart';
-import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
 
 class ReferralScreen extends StatelessWidget {
@@ -45,7 +43,7 @@ class _ReferralScreenState extends State<_ReferralScreen> {
               current.sendingStatus == ReferralSendingStatus.success,
           listener: (context, state) {
             final phoneNumber=SharedPrefs.getPhoneNumber();
-            FreeSmsMetrix.invited(_codeController.text, false,'$phoneNumber');
+            FreeSmsMetrix.invited(_codeController.text, false,phoneNumber);
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
@@ -252,7 +250,7 @@ class _ReferralScreenState extends State<_ReferralScreen> {
                     child: const Text("Skip", style: TextStyle(fontSize: 17)),
                     onTap: () {
                       final phoneNumber=SharedPrefs.getPhoneNumber();
-                      FreeSmsMetrix.invited('', true,'$phoneNumber');
+                      FreeSmsMetrix.invited('', true,phoneNumber);
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

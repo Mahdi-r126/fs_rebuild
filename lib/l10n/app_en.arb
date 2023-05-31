@@ -122,5 +122,11 @@
 "select": "Select",
 "start": "Start",
 "policy_alert":"you must accept privacy and policy",
-"alert":"alert"
+"alert":"alert",
+"cashout_limit":"A withdrawal must be at least 50000!\n\nBE PATIENT.\nGreat things take time\nand empires aren't built in a day.\nSteve Jobs",
+"cashout_wrong":"Your wallet balance is less than the withdrawal!\n\nThe earth is enough for every man's need,\nbut not for every man's greed!\nMahatma Gandhi",
+"cashout_invalid_card":"Invalid card number!\n\nStay Focused!\nGet It DONE!",
+"cashout_failed":"Submission Failed!\nControl your internet access, turn off your VPN and try again!",
+"cashout_success_1":"congratulations!\nThe withdrawal request was registered successfully.\n\nKeep up the Good work!",
+"cashout_success_2":"Your desired sum will be credited to your account, within\n48 hours.\nNumber for tracking:"
 }

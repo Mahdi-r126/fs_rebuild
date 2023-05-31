@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:freesms/presentation/pages/add_ads/widgets/steps.dart';
-import '../../../pages/sponsor_setting.dart';
 
 class AddAdsPage extends StatelessWidget {
   const AddAdsPage({Key? key}) : super(key: key);

@@ -1,12 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:freesms/helpers/helpers.dart';
 import 'package:freesms/helpers/models/inbox_model.dart';
-import 'package:freesms/helpers/sharedprefs.dart';
 import 'package:freesms/send_sms_view/compose_message_screen.dart';
-import 'package:intl/intl.dart';
 import 'package:toast/toast.dart';
 
 import '../../../../apis/apis.dart';
@@ -15,7 +12,7 @@ import '../../../../helpers/string_helper.dart';
 
 class FolderScreen extends StatefulWidget {
   Map<String, InboxModel> messages;
-  FolderScreen({required this.messages});
+  FolderScreen({Key? key, required this.messages}) : super(key: key);
   @override
   State<FolderScreen> createState() => _FolderScreenState();
 }
@@ -150,7 +147,7 @@ class _FolderScreenState extends State<FolderScreen> {
               },
               onLongPress: () {
                 final RenderBox overlay = Overlay.of(context)
-                    ?.context
+                    .context
                     .findRenderObject() as RenderBox;
                 final menuItems = ['report spam'];
                 showMenu(
@@ -182,7 +179,7 @@ class _FolderScreenState extends State<FolderScreen> {
                         radius: 26,
                         backgroundColor: stringToColor(message.contactName()!),
                         child: Text(message.contactName()!.substring(0, 2),
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold)),
                       ),
                     ],
@@ -216,7 +213,7 @@ class _FolderScreenState extends State<FolderScreen> {
                     children: [
                       Text(formatDateTime(message.date!, false),
                           style:
-                              TextStyle(fontSize: 16, color: Colors.black45)),
+                              const TextStyle(fontSize: 16, color: Colors.black45)),
                     ],
                   ),
                 ],

@@ -22,6 +22,9 @@ class OtherMessageBox extends StatelessWidget {
   int getOtpAmount(){
     RegExp amountRegex_1 = RegExp(r'مبلغ:([\d,]+)');
     RegExp amountRegex_2 = RegExp(r'مبلغ:\s*([\d,]+)(?=\s*ريال)');
+    RegExp amountRegex_3 = RegExp(r'مبلغ\s*([\d,]+)');
+
+    
     RegExp passwordRegex = RegExp(r'رمز');
     bool hasPassword = passwordRegex.hasMatch(message.body!);
     if(hasPassword){
@@ -34,6 +37,13 @@ class OtherMessageBox extends StatelessWidget {
       }
       else if(amountRegex_2.firstMatch(message.body!)!=null){
         RegExpMatch? match = amountRegex_2.firstMatch(message.body!);
+        String amountString = match!.group(1)!;
+        int amount = int.tryParse(amountString.replaceAll(',', '')) ?? 0;
+        getOtpColor(amount);
+        return amount;
+      }
+      else if(amountRegex_3.firstMatch(message.body!)!=null){
+        RegExpMatch? match = amountRegex_3.firstMatch(message.body!);
         String amountString = match!.group(1)!;
         int amount = int.tryParse(amountString.replaceAll(',', '')) ?? 0;
         getOtpColor(amount);
@@ -57,7 +67,7 @@ class OtherMessageBox extends StatelessWidget {
       return Colors.yellow;
     }
     else{
-      return Colors.red.shade300;
+      return Colors.red.shade900;
     }
   }
 
@@ -74,13 +84,13 @@ class OtherMessageBox extends StatelessWidget {
           ),
           elevation: 5,
           color: (isFishing() != null && isFishing()!)
-              ? Colors.red.shade300
+              ? Colors.red.shade900
               : getOtpColor(getOtpAmount()),
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: MessageBox(
               message: message.body!,
-              color: Colors.black,
+              color: ((isFishing() != null && isFishing()!) || getOtpColor(getOtpAmount())==Colors.red.shade900)?Colors.white:Colors.black,
               onLinkTap: (value) async {
 
                 if (await canLaunchUrl(Uri.parse(value))) {

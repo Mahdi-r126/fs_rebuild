@@ -1,7 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:freesms/helpers/sharedprefs.dart';
-import '../../Costanat.dart';
 import '../../apis/apis.dart';
 import '../../models/wallet.dart';
 import '../home_screen.dart';
@@ -52,10 +51,10 @@ class _WalletScreenState extends State<WalletScreen> {
     return (isConnect)
         ? Scaffold(
             appBar: AppBar(
-              backgroundColor: Color(0xFF0039C8),
+              backgroundColor: const Color(0xFF0039C8),
               title: Text(
                 AppLocalizations.of(context).wallet,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.w700),
@@ -74,7 +73,7 @@ class _WalletScreenState extends State<WalletScreen> {
                   );
                 } else {
                   if (snapshot.hasError) {
-                    return Center(
+                    return const Center(
                         child: Text("دستگاه به اینترنت متصل نیست"));
                   } else {
                     Wallet wallet = snapshot.data![0];
@@ -120,7 +119,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                     children: <Widget>[
                                       Container(
                                         width: double.maxFinite,
-                                        margin: EdgeInsets.only(
+                                        margin: const EdgeInsets.only(
                                             right: 16, left: 16),
                                         //height: 158,
                                         //    color: Colors.red,
@@ -154,7 +153,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                                   AppLocalizations.of(
                                                       context)
                                                       .walletBalance,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontWeight:
                                                       FontWeight.w700,
                                                       fontSize: 16,
@@ -169,7 +168,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                                     top: 2),
                                                 child: Text(
                                                   wallet.wallet.toString(),
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontWeight:
                                                       FontWeight.w700,
                                                       fontSize: 24,
@@ -217,7 +216,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                                     AppLocalizations.of(
                                                         context)
                                                         .cashOut,
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       fontWeight:
                                                       FontWeight.w700,
                                                       fontSize: 16,
@@ -241,7 +240,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                     width: 0,
                                     // color: Color(0xFF25CEA0)
                                   )),
-                              margin: EdgeInsets.only(
+                              margin: const EdgeInsets.only(
                                   left: 16, right: 16, top: 32),
                               child: Row(
                                 mainAxisAlignment:
@@ -256,7 +255,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                     child: Text(
                                       AppLocalizations.of(context)
                                           .sentMessages,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.w700,
                                           fontSize: 16,
                                           color: Colors.white),
@@ -270,7 +269,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                         bottom: 16),
                                     child: Text(
                                       wallet.totalMessages.toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.w700,
                                           fontSize: 16,
                                           color: Colors.white),
@@ -290,7 +289,7 @@ class _WalletScreenState extends State<WalletScreen> {
         :(SharedPrefs.getWallet() !=-1 && SharedPrefs.getTotalMessage() != -1)? //Not Connected to Internet bot have data
     Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF0039C8),
+          backgroundColor: const Color(0xFF0039C8),
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back_ios,
@@ -305,7 +304,7 @@ class _WalletScreenState extends State<WalletScreen> {
           ),
           title: Text(
             AppLocalizations.of(context).wallet,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.w700),
@@ -350,7 +349,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         children: <Widget>[
                           Container(
                             width: double.maxFinite,
-                            margin: EdgeInsets.only(right: 16, left: 16),
+                            margin: const EdgeInsets.only(right: 16, left: 16),
                             //height: 158,
                             //    color: Colors.red,
                           ), //Container
@@ -378,7 +377,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                     child: Text(
                                       AppLocalizations.of(context)
                                           .walletBalance,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.w700,
                                           fontSize: 16,
                                           color: Colors.white),
@@ -389,7 +388,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                         left: 16, right: 16, top: 2),
                                     child: Text(
                                       SharedPrefs.getWallet().toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.w700,
                                           fontSize: 24,
                                           color: Colors.white),
@@ -413,7 +412,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         width: 0,
                         // color: Color(0xFF25CEA0)
                       )),
-                  margin: EdgeInsets.only(left: 16, right: 16, top: 32),
+                  margin: const EdgeInsets.only(left: 16, right: 16, top: 32),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -422,7 +421,7 @@ class _WalletScreenState extends State<WalletScreen> {
                             left: 16, right: 16, top: 16, bottom: 16),
                         child: Text(
                           AppLocalizations.of(context).sentMessages,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
                               color: Colors.white),
@@ -433,7 +432,7 @@ class _WalletScreenState extends State<WalletScreen> {
                             left: 16, right: 16, top: 16, bottom: 16),
                         child: Text(
                           SharedPrefs.getTotalMessage().toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
                               color: Colors.white),
@@ -443,9 +442,9 @@ class _WalletScreenState extends State<WalletScreen> {
                   ),
                 ),
                 const SizedBox(height: 70,),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text("هشدار:دستگاه به اینترنت متصل نیست",style: TextStyle(color: Colors.white,fontSize: 16)),
                     Icon(Icons.dangerous_outlined,color: Colors.white,),
                   ],

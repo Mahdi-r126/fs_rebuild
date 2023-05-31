@@ -1,7 +1,5 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 import 'package:flutter_sms_inbox/flutter_sms_inbox.dart';
 import 'package:freesms/helpers/constants.dart';
@@ -12,11 +10,7 @@ import '../apis/apis.dart';
 // import '../domain/entities/contact.dart';
 import 'package:contacts_service/contacts_service.dart';
 import '../helpers/string_helper.dart';
-import '../pages/compose_message.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:freesms/presentation/pages/home/contacts_view/read_contacts_bloc.dart';
-import 'package:freesms/presentation/pages/home/contacts_view/read_contacts_state.dart';
-import '../presentation/shared/utils/injection_container.dart';
 import '../presentation/shared/utils/send_sms_repository_impl.dart';
 
 
@@ -86,7 +80,7 @@ class ShareToFriendsState extends State<ShareToFriends> {
         ),
         actions: <Widget>[
           Padding(
-              padding: const EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.all(10),
               child: GestureDetector(
                 onTap: () {
                   if (_showSearch) {

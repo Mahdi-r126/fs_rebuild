@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:freesms/presentation/pages/splash/splash_page.dart';
 import 'package:freesms/presentation/pages/splash/splash_page_state.dart';
 
 import '../../../domain/usecases/splash/check_version.dart';

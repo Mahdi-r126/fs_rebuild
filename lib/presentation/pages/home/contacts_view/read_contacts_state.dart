@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:freesms/data/models/audit_ads_model.dart';
 import 'package:freesms/data/models/contacts_model.dart';
 
 abstract class ReadContactsState extends Equatable {

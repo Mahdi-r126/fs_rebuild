@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../helpers/sharedprefs.dart';
-import '../../pages/about_us.dart';
-import '../../pages/admin_panel.dart';
 import '../../pages/help.dart';
 import '../../pages/setting.dart';
-import '../../presentation/pages/sponsor_ads/sponsors_ads_page.dart';
 import '../../widgets/share_to_friends.dart';
 
 

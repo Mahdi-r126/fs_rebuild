@@ -5,7 +5,6 @@ import 'package:freesms/metrix/metrix.dart';
 import 'package:freesms/presentation/pages/on_boarding/on_boarding.dart';
 
 import '../helpers/sharedprefs.dart';
-import '../widgets/custom_drop_down.dart';
 
 class SelectLanguagePage extends StatefulWidget {
   const SelectLanguagePage({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
     "es_ES": ["Spanish", "assets/images/spain_flag.png"],
   };
 
-  Object? _languageSelectionValue = Object();
+  final Object? _languageSelectionValue = Object();
 
   @override
   void initState() {

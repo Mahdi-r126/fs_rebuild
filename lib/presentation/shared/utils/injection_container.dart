@@ -1,10 +1,8 @@
 import 'package:freesms/data/datasources/local/login/save_tokens_local_data_source.dart';
 import 'package:freesms/data/datasources/remote/login/request_otp_code_remote_data_source.dart';
 import 'package:freesms/data/datasources/remote/login/verify_otp_code_remote_data_source.dart';
-import 'package:freesms/data/datasources/remote/splash/check_version_remote_data_source.dart';
 import 'package:freesms/data/repositories/audit_ads/get_ads_for_audit_repositoey_impl.dart';
 import 'package:freesms/data/repositories/login/verify_otp_code_repository_impl.dart';
-import 'package:freesms/data/repositories/splash/check_version_repository_impl.dart';
 import 'package:freesms/domain/repositories/login/request_otp_code_repository.dart';
 import 'package:freesms/domain/repositories/login/verify_otp_code_repository.dart';
 import 'package:freesms/presentation/pages/login/verify_otp_code_bloc.dart';
@@ -22,7 +20,6 @@ import '../../../domain/repositories/audit_ads/get_ads_for_audit_repository.dart
 import '../../../domain/repositories/contacts_read/read_contacts_repository.dart';
 import '../../../domain/repositories/login/save_tokens_repository.dart';
 import '../../../domain/repositories/login/send_sms_repository.dart';
-import '../../../domain/repositories/splash/check_version_repository.dart';
 import '../../../domain/repositories/sponsor_ads/get_sponsor_ads_repository.dart';
 import '../../../domain/usecases/audit_ads/get_ads_for_audit.dart';
 import '../../../domain/usecases/contacts_read/read_contacts.dart';

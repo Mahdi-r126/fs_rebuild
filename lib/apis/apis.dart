@@ -7,7 +7,6 @@ import 'package:freesms/helpers/constants.dart';
 import 'package:freesms/helpers/sharedprefs.dart';
 import 'package:freesms/models/organizations.dart';
 import 'package:freesms/models/sponsor_ad.dart';
-import 'package:freesms/models/audit_ads.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../data/models/ads_list_model.dart';
 import '../data/models/audit_ads_model.dart';
@@ -322,7 +321,7 @@ class Apis {
 
   Future<List<dynamic>> updateWallet(
       String sender, String receiver, String purpose, String? adId) async {
-    final data;
+    final Map<String, dynamic> data;
     try {
       if (purpose == Constants.SHARE_TO_FRIEND) {
         data = <String, dynamic>{
@@ -456,7 +455,7 @@ class Apis {
     try {
       Response response = await dio.get(Constants.path);
       return AdsList.fromJson(response.data['data']);
-    } on DioError catch (e) {
+    } on DioError {
       return null;
     }
   }
@@ -488,7 +487,7 @@ class Apis {
       return folders;
     } on DioError catch (e) {
       print('Error occurred: ${e.message}');
-      throw e;
+      rethrow;
     }
   }
 

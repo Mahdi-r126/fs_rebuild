@@ -2,17 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freesms/helpers/constants.dart';
 import 'package:freesms/helpers/sharedprefs.dart';
-import 'package:freesms/helpers/smsHelper.dart';
 import 'package:freesms/home_view/chats_veiw/screens/chats/providers/contact_provider.dart';
 import 'package:freesms/home_view/chats_veiw/screens/chats/providers/folderName_provider.dart';
 import 'package:freesms/metrix/metrix.dart';
 import 'package:freesms/pages/about_us.dart';
 import 'package:freesms/pages/select_language_page.dart';
-import 'package:freesms/presentation/pages/on_boarding/on_boarding.dart';
-import 'package:freesms/send_sms_view/pinProvider.dart';
 import 'package:freesms/user/providers/userProvider.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 import './helpers/objectbox.dart';
@@ -100,9 +96,9 @@ class _MyAppState extends State<MyApp> {
               centerTitle: true),
           // colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Color(Constants.accentColor)),
           textTheme: const TextTheme(
-            headline1: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-            headline6: TextStyle(fontSize: 18.0),
-            bodyText2: TextStyle(fontSize: 18.0, fontFamily: 'Hind'),
+            displayLarge: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+            titleLarge: TextStyle(fontSize: 18.0),
+            bodyMedium: TextStyle(fontSize: 18.0, fontFamily: 'Hind'),
           ),
         ),
         home:

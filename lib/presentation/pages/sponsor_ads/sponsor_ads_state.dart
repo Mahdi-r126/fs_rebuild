@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:freesms/data/models/audit_ads_model.dart';
 
 import '../../../data/models/ads_list_model.dart';
 

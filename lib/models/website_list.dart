@@ -1,4 +1,3 @@
-import 'ad.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 
 class WebsiteList {

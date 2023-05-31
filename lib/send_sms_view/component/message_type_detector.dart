@@ -113,7 +113,7 @@ class _MessageBoxState extends State<MessageBox> {
           ),
         );
       }
-      final isLastLine = DeepCollectionEquality().equals(messages.last, line);
+      final isLastLine = const DeepCollectionEquality().equals(messages.last, line);
       if (isLastLine) {
         continue;
       } else {

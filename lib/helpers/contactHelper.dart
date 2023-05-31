@@ -1,13 +1,11 @@
 import 'dart:math';
 
 import 'package:contacts_service/contacts_service.dart';
-import 'package:freesms/helpers/sharedprefs.dart';
-import 'package:freesms/widgets/share_to_friends.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class ContactHelper {
-  static List<Contact> _contacts = [];
-  static Map<String, Contact> _contactsCash = {};
+  static final List<Contact> _contacts = [];
+  static final Map<String, Contact> _contactsCash = {};
 
   static Future<void> init() async {
     await _resetAllInbox();

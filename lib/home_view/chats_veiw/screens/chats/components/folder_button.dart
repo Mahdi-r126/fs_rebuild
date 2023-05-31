@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FolderButton extends StatelessWidget {
@@ -17,7 +16,7 @@ class FolderButton extends StatelessWidget {
       ),
       child: MaterialButton(
         onPressed: () {},
-        child: Text("Icon", style: TextStyle(fontSize: 16,
+        child: const Text("Icon", style: TextStyle(fontSize: 16,
             color: Colors.blueAccent,
             fontWeight: FontWeight.bold),),
       ),

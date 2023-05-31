@@ -1,4 +1,3 @@
-import 'organization.dart';
 
 class AdminLogin{
   String accessToken;

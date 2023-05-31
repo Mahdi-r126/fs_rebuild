@@ -1,25 +1,13 @@
-import 'dart:math';
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:freesms/helpers/contactHelper.dart';
 import 'package:freesms/home_view/widget/drawer.dart';
-import 'package:freesms/presentation/pages/home/contacts_view/read_contacts_bloc.dart';
-import 'package:freesms/presentation/pages/home/contacts_view/read_contacts_state.dart';
 import '../../../../Costanat.dart';
 // import '../../../../domain/entities/contact.dart';
 import '../../../../helpers/constants.dart';
 import '../../../../helpers/string_helper.dart';
-import '../../../../home_view/chats_veiw/screens/messages/message_screen.dart';
-import '../../../../pages/about_us.dart';
-import '../../../../pages/help.dart';
-import '../../../../pages/setting.dart';
-import '../../../../pages/wallet_page.dart';
 import '../../../../send_sms_view/compose_message_screen.dart';
-import '../../../../widgets/share_to_friends.dart';
-import '../../../shared/utils/injection_container.dart';
-import '../../sponsor_ads/sponsors_ads_page.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ReadContactsPage extends StatefulWidget {
   bool? removeDrawer;
@@ -88,7 +76,7 @@ class _ReadContactsPageState extends State<ReadContactsPage> {
         ),
         actions: <Widget>[
           Padding(
-              padding: const EdgeInsets.only(right: 20.0),
+              padding: const EdgeInsets.all(10),
               child: GestureDetector(
                 onTap: () {
                   if (_showSearch) {

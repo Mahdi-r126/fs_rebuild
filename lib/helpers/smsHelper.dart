@@ -131,7 +131,7 @@ class SmsHelper {
     }
     _isFirstFetch = false;
     for (SmsMessage sms in value) {
-      String clearedAddress = ContactHelper.clearNumber(sms.address!);
+      String clearedAddress = ContactHelper.clearNumber(sms.address??'');
       if (_loadedSmsMessage[clearedAddress] == null) {
         _loadedSmsMessage[clearedAddress] = InboxModel();
         _loadedSmsMessage[clearedAddress]!.address = sms.address;

@@ -10,13 +10,11 @@ import 'package:linkfy_text/linkfy_text.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert';
-import 'dart:io' as Io;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../../apis/apis.dart';
 import '../../../../../helpers/constants.dart';
 import '../../../../../helpers/sharedprefs.dart';
 import '../../../../../models/ad.dart';
-import '../../../../../pages/ads_theme.dart';
 import '../message_screen.dart';
 
 class ModalComposeMessage extends StatefulWidget {
@@ -66,8 +64,8 @@ class _ModalComposeMessageState extends State<ModalComposeMessage> {
   int _sendAdFee = 0;
 
   // استرینگ بیس 64 عکس تبلیغ
-  String _imageBase64String = Constants.adImage;
-  String _status = '';
+  final String _imageBase64String = Constants.adImage;
+  final String _status = '';
 
   // var _netConnectionCheck = new NetConnectionCheck();
 
@@ -81,7 +79,7 @@ class _ModalComposeMessageState extends State<ModalComposeMessage> {
   var _connectivityStatus = 'Connected to WiFi';
   final Connectivity _connectivity = Connectivity();
 
-  String _imgString =
+  final String _imgString =
       'iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAMAAABIw9uxAAADAFBMVEX///8PDxEHBwkODhAQEBIFBQcTExUGBggRERMSEhQICAoa';
 
   //Uint8List _bytesImage =Base64Decoder().convert(_imgString);
@@ -189,7 +187,7 @@ class _ModalComposeMessageState extends State<ModalComposeMessage> {
     }
 
     return AnimatedContainer(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       height: 700,
       child: Center(
         child: WillPopScope(
@@ -233,7 +231,7 @@ class _ModalComposeMessageState extends State<ModalComposeMessage> {
                                     child: Row(
                                       children: [
                                         Checkbox(
-                                          value: this._withAds,
+                                          value: _withAds,
                                           onChanged: (bool? value) {
                                             setState(() {
                                               _withAds = value;
@@ -567,7 +565,7 @@ class _ModalComposeMessageState extends State<ModalComposeMessage> {
                                                                       height:
                                                                           60, // 60
                                                                       decoration:
-                                                                          new BoxDecoration(
+                                                                          BoxDecoration(
                                                                         //  shape: BoxShape.circle,
                                                                         color: Colors
                                                                             .black87
@@ -753,11 +751,11 @@ class _ModalComposeMessageState extends State<ModalComposeMessage> {
                                         );
                                       } else {
                                         //if the process is not finished then show the indicator process
-                                        return Center(
-                                            child: Container(
+                                        return const Center(
+                                            child: SizedBox(
                                           height: 80,
                                           width: 80,
-                                          child: const SizedBox(
+                                          child: SizedBox(
                                             height: 80.0,
                                             width: 80.0,
                                             child: CircularProgressIndicator(

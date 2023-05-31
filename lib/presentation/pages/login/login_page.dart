@@ -2,17 +2,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freesms/metrix/metrix.dart';
-import 'package:freesms/presentation/pages/login/referral_screen.dart';
 import 'package:freesms/presentation/pages/login/request_otp_code_state.dart';
 import 'package:freesms/presentation/pages/splash/splash_page.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:provider/provider.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 import 'package:toast/toast.dart';
 import '../../../helpers/sharedprefs.dart';
 import '../../../pages/policy.dart';
 import '../../../pages/terms.dart';
-import '../../../user/providers/userProvider.dart';
 import '../../shared/utils/injection_container.dart';
 import 'request_otp_code_bloc.dart';
 import 'verify_otp_code_bloc.dart';
@@ -187,11 +184,11 @@ class _LoginState extends State<Login> {
                                 ),
                                 const SizedBox(height: 28.0),
                                 PinFieldAutoFill(
-                                    decoration: BoxLooseDecoration(
+                                    decoration: const BoxLooseDecoration(
                                       strokeColorBuilder:
-                                      const FixedColorBuilder(Colors.grey),
+                                      FixedColorBuilder(Colors.grey),
                                       bgColorBuilder:
-                                      const FixedColorBuilder(Colors.white),
+                                      FixedColorBuilder(Colors.white),
                                       hintText: "______",
                                     ),
                                     focusNode: focusNode,
@@ -301,11 +298,11 @@ class _LoginState extends State<Login> {
                                         : _verifyCode(context),
                                     child: Builder(builder: ((context) {
                                       if (verifyState is VerifyOtpCodeLoading) {
-                                        return Row(
+                                        return const Row(
                                           mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                           mainAxisSize: MainAxisSize.min,
-                                          children: const [
+                                          children: [
                                             SizedBox(
                                               height: 15,
                                               width: 15,

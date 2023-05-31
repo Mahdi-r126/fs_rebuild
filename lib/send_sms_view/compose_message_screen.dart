@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import 'dart:ui';
 
 //import 'package:cached_network_image/cached_network_image.dart';
@@ -41,7 +40,6 @@ import '../models/ad.dart';
 //import 'package:internet_connection_checker/internet_connection_checker.dart';
 //import 'package:hive/hive.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import '../pages/ads_theme.dart';
 import 'component/my_message_box.dart';
 import 'component/other_message_box.dart';
 
@@ -82,13 +80,13 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
   String _adId = '';
 
   // آی دی آگهی ارسال شده. نکته: چون به محض ارسال آگهی، آگهی تغییر میکرد و آی دی آگهی جدید به جای آی دی آگهی واقعا ارسال شده قرار می گرفت. آی دی آگهی که در واقعیت ارسال شده را در این متغیر ذخیره کردم
-  String _sendAdId = '';
+  final String _sendAdId = '';
 
   // آی دی آگهی تبلیغاتی
   int _adFee = 0;
 
   // قیمت تبلیغ ارسال شده (همان توضیح بالا مدنظر قرار گیرد)
-  int _sendAdFee = 0;
+  final int _sendAdFee = 0;
 
   double screenWidth = 0;
   double screenHeight = 0;
@@ -238,7 +236,7 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
                   (ContactHelper.getContactId(phoneNumber!) != null)
                       ? launch(
                           "content://com.android.contacts/contacts/${ContactHelper.getContactId(phoneNumber!)}")
-                      : launch("tel://${phoneNumber}");
+                      : launch("tel://$phoneNumber");
                   print(ContactHelper.getContactId(phoneNumber!));
                 },
                 child: Text(
@@ -313,7 +311,7 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
                     width: 80,
                     fit: BoxFit.fill,
                   )
-                : SizedBox(),
+                : const SizedBox(),
             const SizedBox(
               width: 10,
             ),
@@ -863,7 +861,7 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
             child: Container(
                 child: Padding(
                     padding: const EdgeInsets.only(
-                        left: 16, right: 16, bottom: 4, top: 0),
+                        left: 5, right: 5, bottom: 5, top: 5),
                     child: Form(
                       key: _formKey,
                       child: Row(
@@ -872,7 +870,7 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 1, right: 1),
+                              padding: const EdgeInsets.symmetric(horizontal: 5),
                               child: Theme(
                                 data: Theme.of(context).copyWith(
                                     textSelectionTheme: TextSelectionThemeData(

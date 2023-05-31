@@ -1,8 +1,6 @@
-import 'dart:ffi';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:freesms/apis/apis.dart';
 import 'package:freesms/user/models/userModel.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
