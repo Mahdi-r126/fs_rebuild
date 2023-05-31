@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart' as aa;
 
 enum TextType {
   normal,
@@ -46,4 +47,22 @@ Color stringToColor(String str) {
 
   // Generate a color from the hash code
   return Color(hash).withOpacity(1.0);
+}
+
+TextDirection getTextDirection(String text) {
+  bool hasPersian = RegExp(r'[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF\u200C\u200F]+').hasMatch(text);
+  bool hasNumbers = RegExp(r'\d').hasMatch(text);
+
+  if (hasPersian) {
+    return TextDirection.rtl;
+  } else if (hasNumbers) {
+    return TextDirection.ltr;
+  } else {
+    return TextDirection.ltr; // Default direction if neither Persian nor numbers are found
+  }
+}
+
+TextDirection setDirectionInput(String text) {
+  final isRTL = aa.Bidi.hasAnyRtl(text);
+  return isRTL ? TextDirection.rtl : TextDirection.ltr;
 }

@@ -29,6 +29,7 @@ import '../apis/apis.dart';
 import '../helpers/constants.dart';
 import '../helpers/path_provider.dart';
 import '../helpers/sharedprefs.dart';
+import '../helpers/string_helper.dart';
 import '../models/ad.dart';
 
 //import '../utils/app_resource.dart';
@@ -108,6 +109,7 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
   final RegExp phoneRegex = RegExp(
     r'^(?!021)\+?[1-9]\d{1,14}$',
   );
+  TextDirection _inputTextDirection = TextDirection.rtl;
 
   @override
   void initState() {
@@ -342,6 +344,7 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
   Widget MessageContent() {
     return (_messages.isNotEmpty)
         ? ListView.builder(
+            key: UniqueKey(),
             reverse: true,
             itemCount: _messages.length,
             itemBuilder: (context, index) {
@@ -886,6 +889,17 @@ class _ComposeMessageScreenState extends State<ComposeMessageScreen>
                                   controller: userTextController,
                                   keyboardType: TextInputType.multiline,
                                   maxLines: null,
+                                  textDirection: _inputTextDirection,
+                                  onChanged: (value) {
+                                    TextDirection lastTextDirection =
+                                        _inputTextDirection;
+                                    _inputTextDirection =
+                                        getTextDirection(value);
+                                    if (lastTextDirection !=
+                                        _inputTextDirection) {
+                                      setState(() {});
+                                    }
+                                  },
                                   onTap: () {
                                     final isOpen = pinProvider.pinned;
                                     if (!isOpen) {

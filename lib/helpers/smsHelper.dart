@@ -245,8 +245,24 @@ class SmsHelper {
   }
 
   static List<SmsMessage>? specialInbox(String address) {
-    // changeReadStatus(_loadedSmsMessage[address]!.messages,null);
-    return _loadedSmsMessage[address]?.messages ?? [];
+   List<SmsMessage>? messages = _loadedSmsMessage[address]?.messages;
+    if (messages != null) {
+      // Use a set to store unique message IDs
+      Set<int> uniqueIds = <int>{};
+      List<SmsMessage> uniqueMessages = [];
+
+      for (SmsMessage message in messages) {
+        if (!uniqueIds.contains(message.id!)) {
+          // Add the message to the uniqueMessages list
+          uniqueMessages.add(message);
+          uniqueIds.add(message.id!);
+        }
+      }
+
+      return uniqueMessages;
+    }
+
+    return null;
   }
 
   static onListUpdated(Function triggerUpdate) {

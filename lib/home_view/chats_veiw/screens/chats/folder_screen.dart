@@ -198,6 +198,7 @@ class _FolderScreenState extends State<FolderScreen> {
                           height: 10,
                         ),
                         Text(message.body!,
+                            textDirection: getTextDirection(message.body!),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(

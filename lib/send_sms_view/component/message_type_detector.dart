@@ -124,13 +124,16 @@ class _MessageBoxState extends State<MessageBox> {
 
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
-      TextSpan(
-        style: TextStyle(
-          fontSize: 15,
-          color: widget.color,
+    return Directionality(
+      textDirection: getTextDirection(widget.message),
+      child: Text.rich(
+        TextSpan(
+          style: TextStyle(
+            fontSize: 15,
+            color: widget.color,
+          ),
+          children: span,
         ),
-        children: span,
       ),
     );
   }
