@@ -1,0 +1,134 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:8316783866284214320",
+      "lastPropertyId": "21:5217890726812356229",
+      "name": "ContactEntity",
+      "properties": [
+        {
+          "id": "1:4351130330276557209",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6681277656155428002",
+          "name": "uid",
+          "type": 9,
+          "flags": 2048,
+          "indexId": "1:8007405763978231032"
+        },
+        {
+          "id": "3:291599272388950511",
+          "name": "displayName",
+          "type": 9
+        },
+        {
+          "id": "4:8673753180903755421",
+          "name": "thumbnail",
+          "type": 23
+        },
+        {
+          "id": "5:9045566205043858677",
+          "name": "photo",
+          "type": 23
+        },
+        {
+          "id": "6:2474661063164919427",
+          "name": "photoOrThumbnail",
+          "type": 23
+        },
+        {
+          "id": "7:6467497606164830615",
+          "name": "isStarred",
+          "type": 1
+        },
+        {
+          "id": "8:8342245145224144607",
+          "name": "phones",
+          "type": 9
+        },
+        {
+          "id": "9:2182704130009322887",
+          "name": "emails",
+          "type": 9
+        },
+        {
+          "id": "10:7829330293751972793",
+          "name": "addresses",
+          "type": 9
+        },
+        {
+          "id": "11:3974247973427046828",
+          "name": "organizations",
+          "type": 9
+        },
+        {
+          "id": "12:6848958473639418979",
+          "name": "websites",
+          "type": 9
+        },
+        {
+          "id": "13:2765338963016127241",
+          "name": "socialMedias",
+          "type": 9
+        },
+        {
+          "id": "14:152408150546326136",
+          "name": "events",
+          "type": 9
+        },
+        {
+          "id": "15:1891071960287010057",
+          "name": "notes",
+          "type": 9
+        },
+        {
+          "id": "16:5641596562027018119",
+          "name": "accounts",
+          "type": 9
+        },
+        {
+          "id": "17:3115535308894413559",
+          "name": "groups",
+          "type": 9
+        },
+        {
+          "id": "18:3470962927879093366",
+          "name": "thumbnailFetched",
+          "type": 1
+        },
+        {
+          "id": "19:6303511695388768247",
+          "name": "photoFetched",
+          "type": 1
+        },
+        {
+          "id": "20:6257274292252048532",
+          "name": "isUnified",
+          "type": 1
+        },
+        {
+          "id": "21:5217890726812356229",
+          "name": "propertiesFetched",
+          "type": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:8316783866284214320",
+  "lastIndexId": "1:8007405763978231032",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
