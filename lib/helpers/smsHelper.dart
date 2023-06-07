@@ -252,10 +252,12 @@ class SmsHelper {
       List<SmsMessage> uniqueMessages = [];
 
       for (SmsMessage message in messages) {
-        if (!uniqueIds.contains(message.id!)) {
-          // Add the message to the uniqueMessages list
-          uniqueMessages.add(message);
-          uniqueIds.add(message.id!);
+        if(message.id!=null) {
+          if (!uniqueIds.contains(message.id!)) {
+            // Add the message to the uniqueMessages list
+            uniqueMessages.add(message);
+            uniqueIds.add(message.id!);
+          }
         }
       }
 
